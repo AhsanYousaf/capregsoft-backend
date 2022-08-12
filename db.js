@@ -10,6 +10,7 @@ const devConfig = {
     ssl: {
         rejectUnauthorized: false,
       },
+      
 };
 
 const proConfig = {
