@@ -2,12 +2,27 @@ const express = require("express");
 const cors = require("cors");
 const pool = require("./db");
 const upload = require("express-fileupload");
+const path = require('path');
+const PORT = process.env.PORT || 5000;
+
+//process.env.PORT
+//process.env.NODE_ENV => production or undefined
+
+
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 app.use(upload());
+
+
+if(process.env.NODE_ENV === "production"){
+    //server static content
+    //npm run build
+    //app.use(express.static(path.join(__dirname,"client/index.html")));
+    app.use(express.static("./client/index.html"));
+}
 
 
 
@@ -52,6 +67,10 @@ app.post("/apply", async (req,res)=>{
     }
 });
 
-app.listen(5000,()=>{
+app.get("*",(req,res) => {
+    res.sendFile(path.join(__dirname,"client/index.html"));
+});
+
+app.listen(PORT,()=>{
     console.log("server in running");
 });
