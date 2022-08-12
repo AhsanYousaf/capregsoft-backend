@@ -36,7 +36,7 @@ button.addEventListener("click" , function(e) {
             email: email,
             user_message: message
         }
-        const response = fetch("/contactUs",{
+        const response = fetch("http://localhost:5000/contactUs",{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)

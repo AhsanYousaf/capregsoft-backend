@@ -30,7 +30,7 @@ button.addEventListener("click" ,async function(e) {
             //resume: resume
         }
         console.log(body,resume);
-        fetch("/apply",{
+        fetch("http://localhost:5000/apply",{
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body),
