@@ -69,9 +69,9 @@ app.post("/apply", async (req,res)=>{
     }
 });
 
-// app.get("*",(req,res) => {
-//     res.sendFile(path.join(__dirname,"client/"));
-// });
+app.get("*",(req,res) => {
+    res.sendFile(path.join(__dirname,"client/"));
+});
 
 app.listen(PORT,()=>{
     console.log("server in running");
