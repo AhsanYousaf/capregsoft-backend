@@ -32,7 +32,7 @@ button.addEventListener("click" ,async function(e) {
         console.log(body,resume);
         fetch("http://localhost:5000/apply",{
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Headers': '*' },
             body: JSON.stringify(body),
             //files: (files)
         }).then((response) => {

@@ -38,7 +38,7 @@ button.addEventListener("click" , function(e) {
         }
         const response = fetch("http://localhost:5000/contactUs",{
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Headers': '*' },
             body: JSON.stringify(body)
         }).then((response) => {
             if(response.status === 200){
